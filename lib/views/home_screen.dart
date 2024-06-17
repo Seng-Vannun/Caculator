@@ -16,7 +16,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: const Color.fromARGB(255, 247, 247, 247),
       body: SafeArea(
         child: Column(children: [
           Expanded(
@@ -34,7 +34,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                     style: const TextStyle(
                       fontSize: 48,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 0, 0, 0),
                     ),
                     textAlign: TextAlign.end,
                   ),
@@ -69,7 +69,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         color: getBtnColor(value),
         clipBehavior: Clip.hardEdge,
         shape: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
           borderRadius: BorderRadius.circular(100),
         ),
         child: InkWell(
@@ -103,7 +103,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     } else if (value == Btn.per) {
       convertPercentage();
       return;
-    }else if(value == Btn.calculate){
+    } else if (value == Btn.calculate) {
       calculate();
       return;
     }
@@ -211,7 +211,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   // method button color
   Color? getBtnColor(value) {
     return [Btn.del, Btn.clr].contains(value)
-        ? Colors.grey[500]
+        ? const Color.fromARGB(255, 158, 158, 158)
         : [
             Btn.multiply,
             Btn.calculate,
@@ -220,7 +220,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             Btn.subtract,
             Btn.per,
           ].contains(value)
-            ? Colors.orange
-            : Colors.black87;
+            ? const Color.fromARGB(255, 0, 38, 255)
+            : Color.fromARGB(221, 207, 12, 12);
   }
 }
